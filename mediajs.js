@@ -37,13 +37,9 @@ const handleClick = async function (e) {
       openSkype('live:.cid.a69ff49abe732e55');
       break;
     case 'telegram':
-      const data = `${leadIp.ip}&${getUtmParams().ad}&${getUtmParams().pixel}&${
-        leadIp.country
-      }`;
-
-      const base = stringToBase64(data);
-      console.log(`tg://resolve?domain=trafficg_hot_leads_bot&start=${base}`);
-      window.location.href = `tg://resolve?domain=trafficg_hot_leads_bot&start=${base}`;
+      const data = `${leadIp.ip}&${getUtmParams().ad}-${leadIp.country}`;
+      console.log(`tg://resolve?domain=trafficg_hot_leads_bot&start=${data}`);
+      window.location.href = `tg://resolve?domain=trafficg_hot_leads_bot&start=${data}`;
       break;
     case 'whatsapp':
       window.location.href = links[this.dataset.platform];
