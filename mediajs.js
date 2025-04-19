@@ -8,7 +8,7 @@ const mode = URI['prod'];
 const hendlebutton = document.querySelectorAll('.hendlebutton');
 const fomr = document.querySelector('#form');
 const links = {
-  whatsapp: 'https://wa.me/380978419174',
+  whatsapp: 'https://wa.me/420722242996',
 };
 
 const getIp = async () => {
@@ -34,7 +34,7 @@ const handleClick = async function (e) {
 
   switch (this.dataset.platform) {
     case 'skype':
-      openSkype('live:.cid.c9f4f23c9e68115f');
+      openSkype('live:.cid.a69ff49abe732e55');
       break;
     case 'telegram':
       const data = `${leadIp.ip}&${getUtmParams().ad}&${getUtmParams().pixel}&${
