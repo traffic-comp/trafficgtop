@@ -39,7 +39,7 @@ const handleClick = async function (e) {
     case 'telegram':
       const data = `${leadIp.ip}-${getUtmParams().ad}-${leadIp.country}`;
       console.log(`tg://resolve?domain=trafficg_hot_leads_bot&start=${data}`);
-      window.location.href = `tg://resolve?domain=trafficg_hot_leads_bot&start=${data}`;
+      window.location.href = `tg://resolve?domain=trafficg_hot_leads_bot&start=${leadIp.ip}-${getUtmParams().ad}-${leadIp.country}`;
       break;
     case 'whatsapp':
       window.location.href = links[this.dataset.platform];
