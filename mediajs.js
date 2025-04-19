@@ -8,9 +8,7 @@ const mode = URI['prod'];
 const hendlebutton = document.querySelectorAll('.hendlebutton');
 const fomr = document.querySelector('#form');
 const links = {
-  telegram: 'https://t.me/hot_hot_leads_bot',
   whatsapp: 'https://wa.me/380978419174',
-  skype: '',
 };
 
 const getIp = async () => {
