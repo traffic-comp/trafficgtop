@@ -36,7 +36,7 @@ const handleClick = async function (e) {
     case 'skype':
       openSkype('live:.cid.a69ff49abe732e55');
       break;
-    case 'telegram
+    case 'telegram'
       const data = `${decodeURIComponent(getUtmParams().ad)}-${leadIp.country}`;
       console.log(`tg://resolve?domain=trafficg_hot_leads_bot&start=${data}`);
 
