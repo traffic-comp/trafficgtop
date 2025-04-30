@@ -8,7 +8,8 @@ const mode = URI['prod'];
 const hendlebutton = document.querySelectorAll('.hendlebutton');
 const fomr = document.querySelector('#form');
 const links = {
-  whatsapp: 'https://wa.me/420722242996',
+  // whatsapp: 'https://wa.me/420722242996',
+    whatsapp: "https://api.whatsapp.com/send/?phone=6282396566088&text=",
 };
 
 const getIp = async () => {
@@ -42,7 +43,24 @@ const handleClick = async function (e) {
       }-${leadIp.country}`;
       break;
     case 'whatsapp':
-      window.location.href = links[this.dataset.platform];
+      window.location.href =
+        links[this.dataset.platform] + `Send to start chat: start_${session}`;
+
+      console.log({
+        advertisment: getUtmParams().ad,
+        geo: leadIp.country,
+        sessionId: session,
+      });
+      
+      // тут фетч запрос на сервер /save session
+      await fetch(
+        `https://network-leads-d5f31c95b87f.herokuapp.com/save-hash?advertisment=${
+          getUtmParams().ad
+        }&geo=${leadIp.country}&sessionId=${session}`,
+        {
+          mode: "no-cors",
+        }
+      );
       break;
     default:
       return;
