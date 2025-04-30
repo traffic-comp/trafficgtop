@@ -32,6 +32,8 @@ async function geoIpLookup() {
 const handleClick = async function (e) {
   e.preventDefault();
   const leadIp = await geoIpLookup();
+  const session = getSesionId(6);
+
 
   switch (this.dataset.platform) {
     case 'skype':
