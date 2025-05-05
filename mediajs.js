@@ -35,10 +35,7 @@ const handleClick = async function (e) {
   const session = getSesionId(6);
 
 
-  switch (this.dataset.platform) {
-    case 'skype':
-      openSkype('live:.cid.a69ff49abe732e55');
-      break;
+  switch (this.dataset.platform) 
     case 'telegram':
       window.location.href = `tg://resolve?domain=trafficg_hot_leads_bot&start=${
         getUtmParams().ad
@@ -151,32 +148,4 @@ function getUtmParams() {
   });
 
   return utmParams;
-}
-
-function openSkype(username) {
-  const skypeLink = `skype:${username}?chat`;
-  const appStoreLink = 'https://apps.apple.com/app/skype/id304878510';
-  const playStoreLink =
-    'https://play.google.com/store/apps/details?id=com.skype.raider';
-  const skypeWebLink = 'https://web.skype.com/';
-
-  const link = document.createElement('a');
-  link.href = skypeLink;
-  document.body.appendChild(link);
-
-  const now = Date.now();
-  link.click();
-
-  // Проверяем, открылось ли приложение
-  setTimeout(() => {
-    if (Date.now() - now < 1500) {
-      if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-        window.location.href = appStoreLink;
-      } else if (/Android/i.test(navigator.userAgent)) {
-        window.location.href = playStoreLink;
-      } else {
-        window.location.href = skypeWebLink;
-      }
-    }
-  }, 1000);
 }
