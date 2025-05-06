@@ -42,15 +42,7 @@ const handleClick = async function (e) {
       }-${leadIp.country}`;
       break;
     case 'whatsapp':
-      window.location.href =
-        links[this.dataset.platform] + `Hi! Send this personal code and we will contact you soon - start_${session}`;
-
-      console.log({
-        advertisment: getUtmParams().ad,
-        geo: leadIp.country,
-        sessionId: session,
-      });
-      
+              
       // тут фетч запрос на сервер /save session
       await fetch(
         `https://network-leads-d5f31c95b87f.herokuapp.com/save-hash?advertisment=${
@@ -60,6 +52,14 @@ const handleClick = async function (e) {
           mode: "no-cors",
         }
       );
+      window.location.href =
+        links[this.dataset.platform] + `Hi! Send this personal code and we will contact you soon - start_${session}`;
+
+      console.log({
+        advertisment: getUtmParams().ad,
+        geo: leadIp.country,
+        sessionId: session,
+      });
       break;
     default:
       return;
