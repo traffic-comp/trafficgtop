@@ -35,7 +35,7 @@ const handleClick = async function (e) {
   const session = getSesionId(6);
 
 
-  switch (this.dataset.platform) 
+  switch (this.dataset.platform) {
     case 'telegram':
       window.location.href = `tg://resolve?domain=trafficg_hot_leads_bot&start=${
         getUtmParams().ad
