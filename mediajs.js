@@ -37,7 +37,10 @@ const handleClick = async function (e) {
 
   switch (this.dataset.platform) {
     case 'telegram':
-      window.location.href = `tg://resolve?domain=trafficg_hot_leads_bot&start=${
+      const accs = ['traffic_leads_g_bot','leads_traffic_g_bot'];
+      const randomAcc = accs[Math.floor(Math.random()*accs.length)];
+      
+      window.location.href = `tg://resolve?domain=${randomAcc}&start=${
         getUtmParams().ad
       }-${leadIp.country}`;
       break;
